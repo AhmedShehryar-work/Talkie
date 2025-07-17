@@ -23,7 +23,7 @@ Talkie is a full-stack chat application that lets users send and receive message
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/talkie.git
+git clone https://github.com/AhmedShehryar-work/Talkie
 cd talkie/frontend
 npm install
 cd ../backend
