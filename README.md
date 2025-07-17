@@ -24,5 +24,7 @@ Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/yourusername/talkie.git
-cd talkie
+cd talkie/frontend
+npm install
+cd ../backend
 npm install
