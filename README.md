@@ -29,19 +29,3 @@ npm install
 cd ../backend
 npm install
 ```
-
-## 🗝️ ENV file (.env)
-
-```bash
-NODE_ENV=development
-
-MONGODB_URI=mongodb+srv://Ahmed:Shalisphonewmd2006@talkie.loxnimc.mongodb.net/chat_db?retryWrites=true&w=majority&appName=Talkie
-
-PORT=5001
-
-JWT_SECRET=861943tokenkey
-
-CLOUDINARY_CLOUD_NAME=did1kvcgv
-CLOUDINARY_API_KEY=545981834967339
-CLOUDINARY_API_SECRET=3baH6JzkNWbbejTsWjxzaV_DeMo
-```
