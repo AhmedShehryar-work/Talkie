@@ -30,7 +30,7 @@ cd ../backend
 npm install
 ```
 
-## 🗝️ ENV file
+## 🗝️ ENV file (.env)
 
 ```bash
 NODE_ENV=development
