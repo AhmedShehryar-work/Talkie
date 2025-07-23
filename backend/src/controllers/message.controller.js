@@ -1,6 +1,6 @@
 import User from "../models/user.model.js";
 import Message from "../models/message.model.js";
-import cloudianry from "../lib/cloudinary.js";
+import cloudinary from "../lib/cloudinary.js";
 
 
 export const getUsersForSidebar = async (req, res) => {
@@ -9,7 +9,7 @@ export const getUsersForSidebar = async (req, res) => {
         
         //TODO Fix some error here
 
-        const loggedInUserId = req.User._id;
+        const loggedInUserId = req.user._id;
         const filteredUsers = await User.find({_id: {$ne:loggedInUserId}}).select("-password");
 
         res.status(200).json(filteredUsers);
@@ -34,8 +34,8 @@ export const getMessages = async (req, res) => {
 
         const messages = await Message.find({
             $or:[
-                {senderId:userId, recieverId:userToChatId},
-                {senderId:userToChatId, recieverId:userId}
+                {senderId:userId, receiverId:userToChatId},
+                {senderId:userToChatId, receiverId:userId}
             ]
         }); 
 
@@ -55,19 +55,19 @@ export const sendMessage = async (req, res) => {
     try {
         
         const {text, image} = req.body;
-        const {id:recieverId} = req.params;
+        const {id:receiverId} = req.params;
         const senderId = req.user._id;
 
         let imageUrl;
 
         if(image){
-            const uploadResponse = await cloudianry.uploader.upload(image);
+            const uploadResponse = await cloudinary.uploader.upload(image);
             imageUrl = uploadResponse.secure_url;
         }
 
         const newMessage = new Message({
             senderId,
-            recieverId,
+            receiverId,
             text,
             image: imageUrl
         });
