@@ -21,7 +21,14 @@ const SignupPage = () => {
   }
 
   return (
-    <div>SignupPage</div>
+    <div className="min-h-screen grid lg:grid-cols-2">
+    {/* left side*/}
+      <div className="flex flex-col justify-center items-center p-6 sm:9-12">
+
+
+
+      </div>
+    </div>
   )
 }
 

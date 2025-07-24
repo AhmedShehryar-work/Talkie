@@ -19,6 +19,20 @@ Talkie is a full-stack chat application that lets users send and receive message
 - Realtime: Socket.IO
 - Auth: JWT + bcrypt
 
+## 🔐 ENV setup (.env)
+
+```bash
+MONGODB_URI=...
+PORT=5001
+JWT_SECRET=...
+
+CLOUDINARY_CLOUD_NAME=...
+CLOUDINARY_API_KEY=...
+CLOUDINARY_API_SECRET=...
+
+NODE_ENV=development
+```
+
 ## 📦 Installation
 
 Clone the repository and install dependencies:
