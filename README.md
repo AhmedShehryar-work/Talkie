@@ -12,8 +12,8 @@ Talkie is a full-stack chat application that lets users send and receive message
 
 ## 📁 Tech Stack
 
-- Frontend: React @ vite, TailwindCSS(v3), DaisyUI(v4), Zustand, React-router-dom, React-hot-toast
-- Backend: Node.js, Express. Bcryptjs, Cloudinary, Cookie-parser, Dotenv, Jsonwebtoken, Mongoose, Socket.io
+- Frontend: React @ vite, TailwindCSS(v3), DaisyUI(v4), Zustand, React-router-dom, React-hot-toast, Lucide-react
+- Backend: Node.js, Express. Bcryptjs, Cloudinary, Cookie-parser, Dotenv, Jsonwebtoken, Mongoose, Socket.io, Cors
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 - Database: MongoDB
 - Realtime: Socket.IO
