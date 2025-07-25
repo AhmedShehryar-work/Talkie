@@ -1,6 +1,7 @@
 # ⚡ Talkie – Real-Time Chat App
 
 Talkie is a full-stack chat application that lets users send and receive messages in real-time using **Socket.IO**, **Express**, **MongoDB**, and **React**.
+(**Cool Feature:**. It has 32 themes to choose from)
 
 ## 🚀 Features
 
