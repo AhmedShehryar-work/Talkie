@@ -7,6 +7,7 @@ import SettingsPage from './pages/SettingsPage'
 import ProfilePage from './pages/ProfilePage'
 
 import {Loader} from "lucide-react"
+import {Toaster} from "react-hot-toast"
 
 import {Routes, Route, Navigate} from "react-router-dom"
 import {useAuthStore} from './store/useAuthStore'
@@ -28,6 +29,8 @@ console.log(authUser);
         <Loader className="size-10 animate-spin"/>
       </div>
       )}
+      
+      <Toaster />
 
       <Navbar />
 
