@@ -37,10 +37,23 @@ export const useAuthStore = create((set) => ({
         }
     },
 
+    login: async(data) => {
+        set({isLoggingIn:true});
+        try {
+            const res = await axi.post("auth/login", data);
+            set({authUser: res.data});
+            toast.success("Log in successful");
+        } catch (error) {
+            toast.error(error.response.data.message)
+        }finally{
+            set({isLoggingIn: false})
+        }
+    },
+
     logout: async() => {
         try {
             await axi.post("auth/logout");
-            toast.success("Logged out")
+            toast.success("Logged out");
         } catch (error) {
             toast.error(error.response.data.message)
         }
