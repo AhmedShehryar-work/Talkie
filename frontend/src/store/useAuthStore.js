@@ -40,7 +40,7 @@ export const useAuthStore = create((set) => ({
     logout: async() => {
         try {
             await axi.post("auth/logout");
-            toast,success("Logged out")
+            toast.success("Logged out")
         } catch (error) {
             toast.error(error.response.data.message)
         }
