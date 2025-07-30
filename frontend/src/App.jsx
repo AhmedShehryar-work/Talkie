@@ -13,6 +13,7 @@ import {Routes, Route, Navigate} from "react-router-dom"
 import {useAuthStore} from './store/useAuthStore'
 import { useEffect } from 'react'
 
+
 const App = () => {
 
   const {authUser, checkAuth, isCheckingAuth} = useAuthStore()
