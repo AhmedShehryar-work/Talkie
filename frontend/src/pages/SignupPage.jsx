@@ -1,24 +1,22 @@
-import { useState } from "react"
-import {Link} from "react-router-dom"
-import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare, User } from "lucide-react"
-import toast from "react-hot-toast"
-
+import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
-import AuthImagePattern from "../Components/AuthImagePattern"
+import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare, User } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const SignupPage = () => {
+import AuthImagePattern from "../components/AuthImagePattern";
+import toast from "react-hot-toast";
 
-  const[showPassword, setShowPassword] = useState(false);
+const SignUpPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    fullName:"",
-    email:"",
-    password:"",
+    fullName: "",
+    email: "",
+    password: "",
   });
 
-  const {signup, isSigningUp} = useAuthStore();
+  const { signup, isSigningUp } = useAuthStore();
 
   const validateForm = () => {
-
     if (!formData.fullName.trim()) return toast.error("Full name is required");
     if (!formData.email.trim()) return toast.error("Email is required");
     if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
@@ -26,21 +24,21 @@ const SignupPage = () => {
     if (formData.password.length < 6) return toast.error("Password must be at least 6 characters");
 
     return true;
-
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const success = validateForm();
+
     if (success === true) signup(formData);
-  }
+  };
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
-    {/* left side*/}
-      <div className="flex flex-col justify-center items-center p-6 sm:9-12">
-
-    <div className="w-full max-w-md space-y-8">
+      {/* left side */}
+      <div className="flex flex-col justify-center items-center p-6 sm:p-12">
+        <div className="w-full max-w-md space-y-8">
           {/* LOGO */}
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group">
@@ -56,7 +54,6 @@ const SignupPage = () => {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-medium">Full Name</span>
@@ -68,7 +65,7 @@ const SignupPage = () => {
                 <input
                   type="text"
                   className={`input input-bordered w-full pl-10`}
-                  placeholder="Albert Einstein"
+                  placeholder="John Doe"
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 />
@@ -95,7 +92,7 @@ const SignupPage = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Password (at least 6 characters)</span>
+                <span className="label-text font-medium">Password</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -132,18 +129,16 @@ const SignupPage = () => {
                 "Create Account"
               )}
             </button>
-
           </form>
-            
+
           <div className="text-center">
             <p className="text-base-content/60">
               Already have an account?{" "}
               <Link to="/login" className="link link-primary">
-                Log in
+                Sign in
               </Link>
             </p>
           </div>
-          
         </div>
       </div>
 
@@ -153,9 +148,7 @@ const SignupPage = () => {
         title="Join our community"
         subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
       />
-
     </div>
-  )
-}
-
-export default SignupPage
+  );
+};
+export default SignUpPage;

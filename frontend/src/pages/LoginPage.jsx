@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useAuthStore } from "../store/useAuthStore"
-import AuthImagePattern from "../Components/AuthImagePattern"
+import { useAuthStore } from "../store/useAuthStore";
+import AuthImagePattern from "../components/AuthImagePattern";
 import { Link } from "react-router-dom";
-import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from "lucide-react"
+import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from "lucide-react";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -32,7 +32,7 @@ const LoginPage = () => {
                 <MessageSquare className="w-6 h-6 text-primary" />
               </div>
               <h1 className="text-2xl font-bold mt-2">Welcome Back</h1>
-              <p className="text-base-content/60">Log in to your account</p>
+              <p className="text-base-content/60">Sign in to your account</p>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ const LoginPage = () => {
                   Loading...
                 </>
               ) : (
-                "Log in"
+                "Sign in"
               )}
             </button>
           </form>
@@ -111,7 +111,7 @@ const LoginPage = () => {
       {/* Right Side - Image/Pattern */}
       <AuthImagePattern
         title={"Welcome back!"}
-        subtitle={"Log in to continue your conversations and catch up with your messages."}
+        subtitle={"Sign in to continue your conversations and catch up with your messages."}
       />
     </div>
   );
